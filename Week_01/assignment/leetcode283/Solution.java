@@ -1,4 +1,4 @@
-package assignment.movezero;
+package assignment.leetcode283;
 
 /**
  * @ClassName Solution
