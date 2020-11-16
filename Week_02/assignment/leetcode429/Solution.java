@@ -14,24 +14,23 @@ import java.util.Queue;
  **/
 public class Solution {
     public List<List<Integer>> levelOrder(Node root) {
-        /** BFS */
-        List<List<Integer>> res = new ArrayList<>();
-        if (root == null) {
-            return res;
-        }
+        List<List<Integer>> res = new LinkedList<>();
+        if (root == null) return res;
 
         Queue<Node> queue = new LinkedList<>();
-        queue.add(root);
+        queue.offer(root);
 
         while (!queue.isEmpty()) {
             int size = queue.size();
-            List<Integer> subList = new ArrayList<>();
+            List<Integer> currentLevel = new ArrayList<>();
             for (int i = 0; i < size; i++) {
                 Node node = queue.poll();
-                subList.add(node.val);
-                queue.addAll(node.children);
+                currentLevel.add(node.val);
+                if (!node.children.isEmpty()) {
+                    queue.addAll(node.children);
+                }
             }
-            res.add(subList);
+            res.add(currentLevel);
         }
 
         return res;
