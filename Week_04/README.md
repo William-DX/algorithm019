@@ -1,8 +1,10 @@
 学习笔记
 
-DFS代码模板
+## DFS代码模板
+
 #Python
 
+```python
 visited = set()
 
 def dfs(node, visited):
@@ -14,9 +16,11 @@ def dfs(node, visited):
     for next_node in node.children():
         if not next_node in visited:
             dfs(next_node, visited)
-
+```
 
 #Java
+
+```
 public List<List<Integer>> levelOrder(TreeNode root) {
     List<List<Integer>> allResults = new ArrayList<>();
     if (root == null) return allResults;
@@ -36,10 +40,13 @@ private void travel(TreeNode root,int level,List<List<Integer>> results) {
          travel(root.right,level+1,results);
       }
 }
+```
 
+## BFS代码模板
 
-BFS代码模板
 #Java
+
+```
 public List<List<Integer>> levelOrder(TreeNode root) {
     List<List<Integer>> allResults = new ArrayList<>();
     if (root == null) return allResults;
@@ -62,9 +69,13 @@ public List<List<Integer>> levelOrder(TreeNode root) {
     }
     return allResults;
 }
+```
 
-二分查找模板
+## 二分查找模板
+
 #Java
+
+```
 public int binarySearch(int[] array, int target) {
     int left = 0, right = array.length - 1, mid;
     while (left <= right) {
@@ -79,3 +90,6 @@ public int binarySearch(int[] array, int target) {
     }
     return -1;
 }
+```
+
+
